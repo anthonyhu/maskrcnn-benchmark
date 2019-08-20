@@ -128,6 +128,16 @@ class COCODemo(object):
         "toothbrush",
     ]
 
+    CATEGORIES = ["__background__",
+              "person",
+              "bus",
+              "train",
+              "truck",
+              "car",
+              "bicycle",
+              "motorcycle",
+              "rider"]
+
     def __init__(
         self,
         cfg,
@@ -396,7 +406,7 @@ class COCODemo(object):
             x, y = box[:2]
             s = template.format(label, score)
             cv2.putText(
-                image, s, (x, y), cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), 1
+                image, s, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (255, 255, 255), 3
             )
 
         return image
